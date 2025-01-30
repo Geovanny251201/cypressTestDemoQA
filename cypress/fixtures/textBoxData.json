@@ -1,0 +1,15 @@
+{
+    "validData": {
+      "fullName": "John Doe",
+      "email": "john.doe@example.com",
+      "currentAddress": "123 Main Street",
+      "permanentAddress": "456 Secondary Street"
+    },
+    "invalidData": {
+      "fullName": "",
+      "email": "invalid-email",
+      "currentAddress": "",
+      "permanentAddress": ""
+    }
+  }
+  
