@@ -58,6 +58,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
                 cy.wrap($el).should('not.be.checked'); // Verifica que estén desmarcados al inicio
             });
         });
+
+        //Prueba de CI con Jenkins
         
         
 
