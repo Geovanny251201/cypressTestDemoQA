@@ -67,7 +67,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
         //Prueba de CI con Jenkins 6 sin webhooks
         //Prueba de CI con Jenkins 7 sin webhooks
         //Prueba con Self-Hosted Runner 8
-
+        //Prueba con Self-Hosted Runner 9
 
        
         
