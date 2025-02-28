@@ -7,12 +7,12 @@ on:
 
 jobs:
   trigger:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Trigger Jenkins Job
         run: |
-          curl -X POST "$JENKINS_URL/job/CypressDemoQA/build" \
-          --user "tu_usuario_jenkins:$JENKINS_API_TOKEN"
+          curl -X POST "http://192.168.100.8:8080/job/CypressDemoQA/build" \
+          --user "geovannyjenkins:$JENKINS_API_TOKEN"
         env:
           JENKINS_URL: ${{ secrets.JENKINS_URL }}
           JENKINS_API_TOKEN: ${{ secrets.JENKINS_API_TOKEN }}
