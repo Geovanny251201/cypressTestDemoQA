@@ -12,18 +12,9 @@ jobs:
       - name: Trigger Jenkins Job
         shell: powershell
         run: |
-          Invoke-WebRequest -Uri "http://192.168.100.8:8080/job/CypressDemoQA/build" `-Method Post `-Headers @{Authorization="Basic $([Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes('geovannyjenkins:JENKINS_API_TOKEN')))"}
+          Invoke-WebRequest -Uri "$env:JENKINS_URL/job/CypressDemoQA/build" `
+            -Method Post `
+            -Headers @{Authorization="Basic $([Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes('geovannyjenkins:$env:JENKINS_API_TOKEN')))"}
         env:
           JENKINS_URL: ${{ secrets.JENKINS_URL }}
           JENKINS_API_TOKEN: ${{ secrets.JENKINS_API_TOKEN }}
-
-         
-
-
-
-
-          
-
-
-
-          
