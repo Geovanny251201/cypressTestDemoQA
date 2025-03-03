@@ -13,8 +13,11 @@ jobs:
         shell: powershell
         run: |
           Invoke-WebRequest -Uri "$env:JENKINS_URL/job/CypressDemoQA/build" `
-            -Method Post `
-            -Headers @{Authorization="Basic $([Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes('geovannyjenkins:$env:JENKINS_API_TOKEN')))"}
+          -Method Post `
+          -Headers @{Authorization=("Basic " + [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("geovannyjenkins:" + $env:JENKINS_API_TOKEN)))}`
+
         env:
           JENKINS_URL: ${{ secrets.JENKINS_URL }}
           JENKINS_API_TOKEN: ${{ secrets.JENKINS_API_TOKEN }}
+
+          
