@@ -36,5 +36,16 @@ describe('DemoQA - Pruebas en Text Box', () => {
       cy.get('#submit').click();
       cy.get('#output').should('have.text', ''); // No debería generarse ninguna salida
     });
+
+    it('Debería validar que el título sea "Text Box"', () => {
+      // Verificar que el título del formulario sea "Text Box"
+      cy.get('.text-center').should('have.text', 'Text Bos');
+    });
+
+   
+
+
+
+
   });
   
