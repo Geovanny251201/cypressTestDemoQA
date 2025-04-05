@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="23.257" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-04-04T23:07:04" tests="0" file="cypress\e2e\elements\textBox.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="DemoQA - Pruebas en Text Box" timestamp="2025-04-04T23:07:04" tests="3" time="22.892" failures="1">
+    <testcase name="DemoQA - Pruebas en Text Box Debería completar el formulario con datos válidos" time="5.726" classname="Debería completar el formulario con datos válidos">
+    </testcase>
+    <testcase name="DemoQA - Pruebas en Text Box Debería mostrar errores si los campos están vacíos" time="9.283" classname="Debería mostrar errores si los campos están vacíos">
+    </testcase>
+    <testcase name="DemoQA - Pruebas en Text Box Debería validar que el título sea &quot;Text Box&quot;" time="0.000" classname="Debería validar que el título sea &quot;Text Box&quot;">
+      <failure message="Timed out retrying after 4000ms: expected &apos;&lt;h1.text-center&gt;&apos; to have text &apos;Text Bos&apos;, but the text was &apos;Text Box&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected '<h1.text-center>' to have text 'Text Bos', but the text was 'Text Box'
+    at Context.eval (webpack://demoqa-cypress/./cypress/e2e/elements/textBox.cy.js:42:29)
+
+      + expected - actual
+
+      -'Text Box'
+      +'Text Bos'
+      ]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

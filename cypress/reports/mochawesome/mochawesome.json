@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-04T23:07:04.362Z",
+    "end": "2025-04-04T23:07:27.619Z",
+    "duration": 23257,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b36be629-15a0-4363-b56b-0e5ad7c3abda",
+      "title": "",
+      "fullFile": "cypress\\e2e\\elements\\textBox.cy.js",
+      "file": "cypress\\e2e\\elements\\textBox.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e02bf977-cb78-4e14-8da3-ef330cbb995b",
+          "title": "DemoQA - Pruebas en Text Box",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería completar el formulario con datos válidos",
+              "fullTitle": "DemoQA - Pruebas en Text Box Debería completar el formulario con datos válidos",
+              "timedOut": null,
+              "duration": 5726,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Completar los campos\ncy.get('#userName').type('John Doe');\ncy.get('#userEmail').type('john.doe@example.com');\ncy.get('#currentAddress').type('123 Main Street');\ncy.get('#permanentAddress').type('456 Secondary Street');\n// Hacer clic en \"Submit\"\ncy.get('#submit').click();\n// Verificar que los datos se muestren correctamente en la salida\ncy.get('#output').should('be.visible');\ncy.get('#name').should('contain', 'John Doe');\ncy.get('#email').should('contain', 'john.doe@example.com');",
+              "err": {},
+              "uuid": "ecde34b9-c9bf-47bf-96b0-a8917b96b21c",
+              "parentUUID": "e02bf977-cb78-4e14-8da3-ef330cbb995b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Debería mostrar errores si los campos están vacíos",
+              "fullTitle": "DemoQA - Pruebas en Text Box Debería mostrar errores si los campos están vacíos",
+              "timedOut": null,
+              "duration": 9283,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#submit').click();\ncy.get('#output').should('have.text', ''); // No debería generarse ninguna salida",
+              "err": {},
+              "uuid": "1074cee4-7856-4c0d-b2cc-2d4e54a67a27",
+              "parentUUID": "e02bf977-cb78-4e14-8da3-ef330cbb995b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Debería validar que el título sea \"Text Box\"",
+              "fullTitle": "DemoQA - Pruebas en Text Box Debería validar que el título sea \"Text Box\"",
+              "timedOut": null,
+              "duration": 8122,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Verificar que el título del formulario sea \"Text Box\"\ncy.get('.text-center').should('have.text', 'Text Bos');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h1.text-center>' to have text 'Text Bos', but the text was 'Text Box'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h1.text-center>' to have text 'Text Bos', but the text was 'Text Box'\n    at Context.eval (webpack://demoqa-cypress/./cypress/e2e/elements/textBox.cy.js:42:29)",
+                "diff": "- 'Text Box'\n+ 'Text Bos'\n"
+              },
+              "uuid": "142ef47e-002c-46ef-a8b3-97cc23e1f60c",
+              "parentUUID": "e02bf977-cb78-4e14-8da3-ef330cbb995b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ecde34b9-c9bf-47bf-96b0-a8917b96b21c",
+            "1074cee4-7856-4c0d-b2cc-2d4e54a67a27"
+          ],
+          "failures": [
+            "142ef47e-002c-46ef-a8b3-97cc23e1f60c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 23131,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
