@@ -33,6 +33,7 @@ jobs:
       run: npm install -g @testmo/testmo-cli
 
     - name: Subir resultados a Testmo
+      if: always()
       env:
         TESTMO_TOKEN: ${{ secrets.TESTMO_TOKEN }}
       run: |

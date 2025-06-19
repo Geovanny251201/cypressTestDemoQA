@@ -39,7 +39,7 @@ describe.only('DemoQA - Pruebas en Text Box', () => {
 
     it('Debería validar que el título sea "Text Box"', () => {
       // Verificar que el título del formulario sea "Text Box"
-      cy.get('.text-center').should('have.text', 'Text Box');
+      cy.get('.text-center').should('have.text', 'Text Bos');
     });
 
    
