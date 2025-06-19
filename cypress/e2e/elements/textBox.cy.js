@@ -14,7 +14,7 @@ describe.only('DemoQA - Pruebas en Text Box', () => {
     });
     
   
-    it('Debería completar el formulario con datos válidos', () => {
+    it('ID1:Debería completar el formulario con datos válidos', () => {
       // Completar los campos
       cy.get('#userName').type('John Doe');
       cy.get('#userEmail').type('john.doe@example.com');
