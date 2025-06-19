@@ -25,7 +25,7 @@ jobs:
     - name: Ejecutar pruebas Cypress y generar resultados JUnit
       run: |
         npx cypress run \
-          --spec "cypress/e2e/textBox.cy.js" \
+          --spec "cypress/e2e/elements/textBox.cy.js" \
           --reporter junit \
           --reporter-options "mochaFile=results/test-results-[hash].xml,toConsole=true"
       
