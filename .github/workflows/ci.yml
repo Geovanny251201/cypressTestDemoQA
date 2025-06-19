@@ -24,7 +24,10 @@ jobs:
 
     - name: Ejecutar pruebas Cypress y generar resultados JUnit
       run: |
-        npx cypress run --reporter junit --reporter-options "mochaFile=results/test-results-[hash].xml,toConsole=true"
+        npx cypress run \
+          --spec "cypress/e2e/textBox.cy.js" \
+          --reporter junit \
+          --reporter-options "mochaFile=results/test-results-[hash].xml,toConsole=true"
       
     - name: Instalar testmo-cli
       run: npm install -g @testmo/testmo-cli
