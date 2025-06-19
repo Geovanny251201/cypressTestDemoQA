@@ -11,7 +11,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@testmo/testmo-cli": "^1.4.4",
     "cypress": "^14.0.0",
+    "cypress-iframe": "^1.0.1",
     "cypress-multi-reporters": "^2.0.5",
     "junit-report-builder": "^5.1.1",
     "mocha": "^11.1.0",

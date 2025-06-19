@@ -4,7 +4,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   
   
   
-  describe('DemoQA - Pruebas en Text Box', () => {
+  describe('DemoQA - Pruebas en CheckBox', () => {
          //se ejecuta antes de cada prueba dentro del bloque
         beforeEach(() => {
             // Navegar a la página de Text Box     
@@ -58,25 +58,4 @@ Cypress.on('uncaught:exception', (err, runnable) => {
                 cy.wrap($el).should('not.be.checked'); // Verifica que estén desmarcados al inicio
             });
         });
-
-        //Prueba de CI con Jenkins
-        //Prueba de CI con Jenkins 2
-        //Prueba de CI con Jenkins 3
-        //Prueba de CI con Jenkins 4
-        //Prueba de CI con Jenkins 5 sin webhooks
-        //Prueba de CI con Jenkins 6 sin webhooks
-        //Prueba de CI con Jenkins 7 sin webhooks
-        //Prueba con Self-Hosted Runner 8
-        //Prueba con Self-Hosted Runner 9
-        //Prueba con Self-Hosted Runner 10
-        //Prueba con Self-Hosted Runner 11
-        //Prueba con Self-Hosted Runner 12
-        //Prueba con Self-Hosted Runner 13
-        //Prueba con Self-Hosted Runner 14
-        
-        
-        
-        
-        
-
 });

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="21.314" tests="3" failures="0">
+  <testsuite name="" timestamp="2025-06-18T23:37:34" tests="0" file="cypress\e2e\elements\textBox.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Root Suite.DemoQA - Pruebas en Text Box" timestamp="2025-06-18T23:37:34" tests="3" time="21.294" failures="0">
+    <testcase name="Debería completar el formulario con datos válidos" time="11.548" classname="DemoQA - Pruebas en Text Box">
+    </testcase>
+    <testcase name="Debería mostrar errores si los campos están vacíos" time="4.905" classname="DemoQA - Pruebas en Text Box">
+    </testcase>
+    <testcase name="Debería validar que el título sea &quot;Text Box&quot;" time="4.660" classname="DemoQA - Pruebas en Text Box">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -4,7 +4,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 
 
-describe('DemoQA - Pruebas en Text Box', () => {
+describe.only('DemoQA - Pruebas en Text Box', () => {
 
     //se ejecuta antes de cada prueba dentro del bloque
     beforeEach(() => {
@@ -39,7 +39,7 @@ describe('DemoQA - Pruebas en Text Box', () => {
 
     it('Debería validar que el título sea "Text Box"', () => {
       // Verificar que el título del formulario sea "Text Box"
-      cy.get('.text-center').should('have.text', 'Text Bos');
+      cy.get('.text-center').should('have.text', 'Text Box');
     });
 
    
@@ -47,5 +47,5 @@ describe('DemoQA - Pruebas en Text Box', () => {
 
 
 
-  });
+});
   
