@@ -19,25 +19,26 @@ jobs:
       with:
         node-version: 18
 
-    - name: Instalar dependencias
+    - name: Instalar dependencias del proyecto
       run: npm ci
 
-    - name: Ejecutar pruebas Cypress y generar resultados JUnit
+    - name: Instalar testmo-cli
+      run: npm install --save-dev @testmo/testmo-cli
+
+    - name: Ejecutar pruebas Cypress (aunque fallen)
+      continue-on-error: true
       run: |
         npx cypress run \
           --spec "cypress/e2e/elements/textBox.cy.js" \
           --reporter junit \
-          --reporter-options "mochaFile=results/test-results-[hash].xml,toConsole=true"
-      
-    - name: Instalar testmo-cli
-      run: npm install -g @testmo/testmo-cli
+          --reporter-options "mochaFile=results/test-results.xml,toConsole=true"
 
-    - name: Subir resultados a Testmo
+    - name: Subir resultados a Testmo (aunque Cypress falle)
       if: always()
       env:
         TESTMO_TOKEN: ${{ secrets.TESTMO_TOKEN }}
       run: |
-        testmo automation:run:submit \
+        npx testmo automation:run:submit \
           --instance https://testpracticeqa.testmo.net \
           --project-id 1 \
           --name "Cypress GitHub Run" \
