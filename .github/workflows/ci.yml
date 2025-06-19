@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Cypress Tests with Testmo
 
 on:
   push:
@@ -7,25 +7,40 @@ on:
     branches: [ main ]
 
 jobs:
-  cypress-run:
+  cypress-test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout código
       uses: actions/checkout@v4
 
-    - name: Setup Node.js
+    - name: Instalar Node.js
       uses: actions/setup-node@v4
       with:
         node-version: 18
 
-    - name: Install dependencies
+    - name: Instalar dependencias
       run: npm ci
 
-    - name: Run Cypress tests
-      run: npx cypress run
+    - name: Ejecutar pruebas Cypress y generar resultados JUnit
+      run: |
+        npx cypress run --reporter junit --reporter-options "mochaFile=results/test-results-[hash].xml,toConsole=true"
+      
+    - name: Instalar testmo-cli
+      run: npm install -g @testmo/testmo-cli
 
-    - name: Upload videos and screenshots if tests fail
+    - name: Subir resultados a Testmo
+      env:
+        TESTMO_TOKEN: ${{ secrets.TESTMO_TOKEN }}
+      run: |
+        testmo automation:run:submit \
+          --instance https://testpracticeqa.testmo.net \
+          --project-id 1 \
+          --name "Cypress GitHub Run" \
+          --source github-actions \
+          --results results/*.xml
+
+    - name: Subir videos y capturas si falla
       if: failure()
       uses: actions/upload-artifact@v4
       with:
