@@ -1,0 +1,25 @@
+trigger:
+  - main  # o la rama que usás
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '18.x'
+    displayName: 'Instalar Node.js'
+
+  - script: npm ci
+    displayName: 'Instalar dependencias'
+
+  - script: npx cypress run
+    displayName: 'Ejecutar pruebas Cypress'
+
+  - script: npm install -g @testmo/testmo-cli
+    displayName: 'Instalar testmo-cli'
+
+  - script: testmo automation:run:submit --instance https://testpracticeqa.testmo.net --project-id 1 --name "Cypress Azure Run" --source "azure-devops" --results results/*.xml
+    env:
+      TESTMO_TOKEN: $(TESTMO_TOKEN)
+    displayName: 'Subir resultados a Testmo'
